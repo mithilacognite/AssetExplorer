@@ -20,4 +20,4 @@ jobs:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03KYDC0QTH\",\"text\":\"Test Doc update\"}'
+        args: '{\"channel\":\"C03KYDC0QTH\",\"text\":\"Doc update test\"}'
