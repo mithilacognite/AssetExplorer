@@ -17,9 +17,8 @@ jobs:
     steps:
     - name: Notify slack
       if: contains(github.event.head_commit.message, 'smoke_test')
-      run: |
-        env:
+      env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: pullreminders/slack-action@master
-        with:
-          args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Yayy bot worked!\"}'
+      uses: pullreminders/slack-action@master
+      with:
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Yayy bot worked!\"}'  
