@@ -4,11 +4,11 @@ name: SlackTestV2
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch 
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
 jobs:
-  # This workflow contains a single job called "build" 
+  # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -17,12 +17,12 @@ jobs:
     steps:
     - name: Notify slack
       if: contains(github.event.head_commit.message, 'kp')
-      run: echo "Executing kp........"
+      
       env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           #ISSUE_URL: ${{ github.event.issue.html_url }}
           
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03PGEABH8D\",\"text\":\"file got modified....... \"}'    
+        args: '{\"channel\":\"C03PGEABH8D\",\"text\":\"file got modified\"}'    
 
