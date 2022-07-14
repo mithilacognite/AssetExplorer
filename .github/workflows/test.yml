@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Slack
+name: SlackTestV2
 
 # Controls when the workflow will run
 on:
@@ -16,16 +16,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Notify slack
-      if: contains(github.event.head_commit.message, 'smoke_test')
+      if: contains(github.event.head_commit.message, 'kp')
         for file in ${{ steps.changed-files.outputs.modified_files }}
       env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"files were modified\"}'    
-#             echo "$file was modified"
-#       env:
-#           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-#       uses: pullreminders/slack-action@master
-#       with:
-#         args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Testing Bot ................!\"}'
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"file got modified\"}'    
+
