@@ -17,10 +17,12 @@ jobs:
     steps:
     - name: Notify slack
       if: contains(github.event.head_commit.message, 'kp')
-        for file in ${{ steps.changed-files.outputs.modified_files }}
+      run: echo "Executing kp........"
       env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          #ISSUE_URL: ${{ github.event.issue.html_url }}
+          
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"file got modified\"}'    
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"file got modified....... \"}'    
 
