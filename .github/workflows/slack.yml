@@ -22,7 +22,7 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\ "files were modified\"}'    
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"files were modified\"}'    
 #             echo "$file was modified"
 #       env:
 #           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
