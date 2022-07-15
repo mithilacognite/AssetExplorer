@@ -24,6 +24,6 @@ jobs:
           
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03PGEABH8D\",\"text\":\"Pull request called\"}'    
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":${{github.event.compare}}}'   
 
 
