@@ -28,10 +28,7 @@ jobs:
         #args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"${{github.event.compare}}\"}'
         
 
-        uses: jitterbit/get-changed-files@v1
-        run: |
-          for changed_file in ${{ steps.files.outputs.all }}; do
-            echo "Changed Files ${changed_file}."
-          done
+        
+
 
 
