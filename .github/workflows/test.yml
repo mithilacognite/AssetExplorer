@@ -31,9 +31,17 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
         
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - id: files
+        name: Run the action
+        uses: ./
 
       - name: Print steps context output
         run: |
