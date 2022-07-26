@@ -34,9 +34,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - id: files
-        name: Run the action
-        uses: ./
 
       - name: Print steps context output
         run: |
