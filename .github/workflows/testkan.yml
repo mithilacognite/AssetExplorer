@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: jannekem/run-python-script-action@v1
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       - uses: pullreminders/slack-action@master
         with:
           args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"These Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'
