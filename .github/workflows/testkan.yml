@@ -1,4 +1,4 @@
-name: Run Script
+name: Run Script TestKan
 
 on:
   push:
@@ -12,9 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: jannekem/run-python-script-action@v1
+      - uses: pullreminders/slack-action@master
         with:
-          script: |
-            import os
-            print("Directory contents:")
-            for f in os.listdir():
-                print(f)
+          args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"These Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'
+
+      
