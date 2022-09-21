@@ -17,5 +17,21 @@ jobs:
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
+
+
+  build2:
+  # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+  # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Notify slack
+      if: contains(github.event.head_commit.message, 'wathsya')
       
- 
+      env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          #ISSUE_URL: ${{ github.event.issue.html_url }}
+          
+      uses: pullreminders/slack-action@master
+      with:
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"These Wathsya Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'                
