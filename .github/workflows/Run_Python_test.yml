@@ -1,5 +1,4 @@
-name: Run Script TestKan
-
+name: Run_Python_test
 on:
   push:
     branches: [main]
