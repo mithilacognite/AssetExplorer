@@ -14,6 +14,7 @@ jobs:
         with:
           script: |
             import os
+            print(${{github.event.commits[0].author.username}})
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
@@ -30,8 +31,8 @@ jobs:
       
       env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          #ISSUE_URL: ${{ github.event.issue.html_url }}
+          
           
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"These Wathsya Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'                
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Wathsya Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'                
