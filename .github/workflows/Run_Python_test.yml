@@ -14,7 +14,7 @@ jobs:
         with:
           script: |
             import os
-            print(${{github.event.commits[0].author.username}})
+            print("commiting user:"+str(${{github.event.commits[0].author.username}}))
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
