@@ -19,7 +19,7 @@ jobs:
             for f in os.listdir():
                 print(f)
       
-        env:
+        env: 
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       - uses: pullreminders/slack-action@master
         with:
