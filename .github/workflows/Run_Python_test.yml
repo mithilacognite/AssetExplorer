@@ -19,7 +19,8 @@ jobs:
             reg_result = re.search('##(.*)', message)
             print(reg_result.group(1))
             commit_description = reg_result.group(1)
-            
+            description_arr = commit_description.split("@")
+            print(description_arr)
 
             search_text  = ".md"            
             path = 'https://docs.cognite.com/'            
