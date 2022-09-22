@@ -14,23 +14,26 @@ jobs:
         with:
           script: |
 
+            path = 'https://docs.cognite.com/'
             import re
             message = str("""${{github.event.head_commit.message}}""").replace("\n\n", "##").replace("\n", "@")
             reg_result = re.search('##(.*)', message)
-            print(reg_result.group(1))
+            
             commit_description = reg_result.group(1)
             description_arr = commit_description.split("@")
-            print(description_arr)
+            print("description_arr"+description_arr)
 
             for file_url in description_arr:
-              print(file_url)
-              search_text  = ".md"            
-              path = 'https://docs.cognite.com/'            
+              print("file_url"+file_url)
+              search_text  = ".md"      
+              reg_match = re.search('docs(.*).md', file_url)  
+              print("reg_match"+reg_match)    
+                          
 
               if search_text in str(file_url):
-                print("Search term:'"+search_text+"' found in "+commit_description)
+                print("Search term:'"+search_text+"' found in "+file_url)
               else:
-                print("Search term:'"+search_text+"' NOT found in "+commit_description)
+                print("Search term:'"+search_text+"' NOT found in "+file_url)
 
 
 
