@@ -14,10 +14,10 @@ jobs:
         with:
           script: |
             import os
-            import requests
-
-            x = requests.get('https://w3schools.com/python/demopage.htm')
-            print(x.text)
+            
+            import urllib.request
+            with urllib.request.urlopen('https://w3schools.com/python/demopage.htm') as response:
+              html = response.read()
             
             print(str('${{github.event.commits[0].author.username}}'))
             print("Directory contents:")
