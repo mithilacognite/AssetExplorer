@@ -13,14 +13,15 @@ jobs:
       - uses: jannekem/run-python-script-action@v1
         with:
           script: |
-            import os
-            
+            import os            
             import urllib.request
-            with urllib.request.urlopen('https://w3schools.com/python/demopage.htm') as response:
+            _search_text  = ".yml"
+            path = str('${{github.event.compare}}')
+            with urllib.request.urlopen(path) as response:
               html = response.read()
               print(html)
             
-            print(str('${{github.event.commits[0].author.username}}'))
+            print(str('${{github.event.compare}}'))
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
@@ -41,5 +42,5 @@ jobs:
           
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Wathsya Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.repository.contents_url}}\"}'  
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'  
         
