@@ -26,8 +26,9 @@ jobs:
             for file_url in description_arr:
               print("file_url"+file_url)
               search_text  = ".md"      
-              reg_match = str(re.search('docs(.*).md', file_url))  
-              print("reg_match:"+reg_match)    
+              reg_match = str(re.search('docs(.*).md', file_url).group(1))  
+              generated_path = path+reg_match
+              print("reg_match:"+generated_path)    
                           
 
               if search_text in str(file_url):
