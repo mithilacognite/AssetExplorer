@@ -14,12 +14,14 @@ jobs:
         with:
           script: |
 
-            message = str("""${{github.event.head_commit.message}}""").replace("\n", "" )
+            message = str("""${{github.event.head_commit.message}}""").replace("\n\n", "##").replace("\n", "@")
+            reg_result = re.search('##(.*)', message)
+            print(reg_result.group(1))
+            commit_description = reg_result.group(1)
             
 
             search_text  = ".md"            
-            path = 'https://docs.cognite.com/'
-            
+            path = 'https://docs.cognite.com/'            
 
             if search_text in str(message):
               print("Search term:'"+search_text+"' found in "+message)
