@@ -2,7 +2,6 @@ name: Run_Python_test
 on:
   push:
     branches: [main]
- 
 
 jobs:
   job1:
@@ -39,10 +38,10 @@ jobs:
       
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          Greeting: Hello
           
-          
-          
+                    
         with:
-          args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"${{path1}} Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'  
+          args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"${{Greeting}} Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'  
    
  
