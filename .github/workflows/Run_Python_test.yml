@@ -50,5 +50,5 @@ jobs:
           
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Changes were commited to main by $env:path1  ${{github.event.compare}}\"}'  
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Changes were commited to main by ${{env:path1}}  ${{github.event.compare}}\"}'  
        
