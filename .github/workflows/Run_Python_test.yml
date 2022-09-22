@@ -30,10 +30,9 @@ jobs:
               
               if reg_match != "": 
                 generated_path = path+reg_match
-                print("reg_match:"+generated_path) 
-                
-                    run: |
-                      echo "action_state=yellow" >> $GITHUB_ENV
+                print("reg_match:"+generated_path)
+                run: | 
+                  echo "action_state=yellow" >> $GITHUB_ENV    
                           
 
 
@@ -56,4 +55,4 @@ jobs:
       uses: pullreminders/slack-action@master
       with:
         args: '{\"channel\":\"C03LV8M6P25\",\"text\":\"Changes were commited to main by ${{github.event.commits[0].author.username}}  ${{github.event.compare}}\"}'  
-        
+       
