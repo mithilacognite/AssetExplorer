@@ -15,7 +15,7 @@ jobs:
           script: |
             import os            
             import urllib.request
-            _search_text  = ".yml"
+            _search_text  = "contributor"
             path = str('${{github.event.compare}}')
             with urllib.request.urlopen(path) as response:
               html = response.read()
