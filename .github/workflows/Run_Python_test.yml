@@ -4,7 +4,7 @@ on:
     branches: [main]
  
 
-jobs: 
+jobs:
   build1:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +21,7 @@ jobs:
             
             commit_description = reg_result.group(1)
             description_arr = commit_description.split("@")
-            print("description_arr"+description_arr)
+            print(description_arr)
 
             for file_url in description_arr:
               print("file_url"+file_url)
