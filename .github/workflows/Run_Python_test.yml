@@ -14,7 +14,8 @@ jobs:
         with:
           script: |
 
-            message = '${{github.event.head_commit.message}}'
+            message = str('${{github.event.head_commit.message}}')
+            
 
             search_text  = ".md"            
             path = 'https://docs.cognite.com/'
