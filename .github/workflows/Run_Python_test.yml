@@ -40,6 +40,6 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
               
         with:
-           args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}} \n ${{env.path1}} \n Change comparison link ${{github.event.compare}}\"}'  
+           args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.path1}} \n Change comparison link: ${{github.event.compare}}\"}'  
    
  
