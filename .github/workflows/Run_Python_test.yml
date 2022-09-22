@@ -24,10 +24,10 @@ jobs:
             search_text  = ".md"            
             path = 'https://docs.cognite.com/'            
 
-            if search_text in str(message):
-              print("Search term:'"+search_text+"' found in "+message)
+            if search_text in str(commit_description):
+              print("Search term:'"+search_text+"' found in "+commit_description)
             else:
-              print("Search term:'"+search_text+"' NOT found in "+message)
+              print("Search term:'"+search_text+"' NOT found in "+commit_description)
 
 
 
