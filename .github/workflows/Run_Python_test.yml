@@ -15,15 +15,30 @@ jobs:
           script: |
             import os            
             import urllib.request
-            _search_text  = "contributor"
+            import urllib2 
+
+            _search_text  = ".yml"
             path = str('${{github.event.compare}}')
-            with urllib.request.urlopen(path) as response:
-              html = response.read()
-              print(html)
-              if _search_text in str(html):
-                print("Search term:'"+_search_text+"' found in "+path)
-              else:
-                print("Search term:'"+_search_text+"' NOT found in "+path)
+
+            src = ''
+            req = urllib2.Request(path)
+
+            try:
+                response = urllib2.urlopen(req)
+                src = response.read()
+                response.close()
+            except IOError:
+                print ('can\'t open',url)
+                    
+
+            print(src)
+
+
+
+            if _search_text in str(src):
+              print("Search term:'"+_search_text+"' found in "+path)
+            else:
+              print("Search term:'"+_search_text+"' NOT found in "+path)
               
             
             print(str('${{github.event.compare}}'))
