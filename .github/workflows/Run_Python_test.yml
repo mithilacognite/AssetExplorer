@@ -19,7 +19,7 @@ jobs:
             search_text2  = ".yml"
             path = str('${{github.event.compare}}')
             user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
-            headers = {'User-Agent': user_agent}
+            headers = "{'User-Agent': user_agent}"
 
             with urllib.request.urlopen(path,headers) as response:
               html = response.read()
