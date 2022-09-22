@@ -31,6 +31,7 @@ jobs:
               if reg_match != "": 
                 generated_path = path+reg_match
                 print("reg_match:"+generated_path)
+                set_env("path1", generated_path)
  
 
   job2:
