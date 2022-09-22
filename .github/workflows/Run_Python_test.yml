@@ -19,7 +19,7 @@ jobs:
             search_text2  = ".yml"
             path = str('${{github.event.compare}}')
 
-            
+            /*
             user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
             values = {'name': 'Michael Foord',
                       'location': 'Northampton',
@@ -28,8 +28,9 @@ jobs:
 
             data = urllib.parse.urlencode(values)
             data = data.encode('ascii')
-
             with urllib.request.urlopen(path,data,headers) as response:
+            */
+            with urllib.request.urlopen(path) as response:
               html = response.read()
               print(html)
               if search_text in str(html):
