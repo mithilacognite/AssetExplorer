@@ -14,6 +14,7 @@ jobs:
         with:
           script: |
 
+            import re
             message = str("""${{github.event.head_commit.message}}""").replace("\n\n", "##").replace("\n", "@")
             reg_result = re.search('##(.*)', message)
             print(reg_result.group(1))
