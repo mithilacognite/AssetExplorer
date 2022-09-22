@@ -30,13 +30,13 @@ jobs:
               
               if reg_match != "": 
                 generated_path = path+reg_match
-                print("reg_match:"+generated_path)    
+                print("reg_match:"+generated_path) 
+                
+                    run: |
+                      echo "action_state=yellow" >> $GITHUB_ENV
                           
 
-              if search_text in str(file_url):
-                print("Search term:'"+search_text+"' found in "+file_url)
-              else:
-                print("Search term:'"+search_text+"' NOT found in "+file_url)
+
 
 
 
