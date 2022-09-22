@@ -13,30 +13,19 @@ jobs:
       - uses: jannekem/run-python-script-action@v1
         with:
           script: |
+
+            message = github.event.head_commit.message
             import os            
             import urllib.request
-            search_text  = "contributor"
-            search_text2  = ".yml"
-            path = str('${{github.event.compare}}')
+            search_text  = ".md"            
+            path = 'https://docs.cognite.com/'
             
-            with urllib.request.urlopen(path) as response:
-              html = response.read()
-              print(html)
-              if search_text in str(html):
-                print("Search term:'"+search_text+"' found in "+path)
-              else:
-                print("Search term:'"+search_text+"' NOT found in "+path)
 
-              if search_text2 in str(html):
-                print("Search term:'"+search_text2+"' found in "+path)
-              else:
-                print("Search term:'"+search_text2+"' NOT found in "+path)
-              
-            
-            print(str('${{github.event.compare}}'))
-            print("Directory contents:")
-            for f in os.listdir():
-                print(f)
+            if search_text in str(message):
+              print("Search term:'"+search_text+"' found in "+message)
+            else:
+              print("Search term:'"+search_text+"' NOT found in "+message)
+
 
 
   build2:
@@ -50,7 +39,7 @@ jobs:
       
       env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-           
+          
           
       uses: pullreminders/slack-action@master
       with:
