@@ -14,9 +14,8 @@ jobs:
         with:
           script: |
 
-            message = github.event.head_commit.message
-            import os            
-            import urllib.request
+            message = '${{github.event.head_commit.message}}'
+
             search_text  = ".md"            
             path = 'https://docs.cognite.com/'
             
