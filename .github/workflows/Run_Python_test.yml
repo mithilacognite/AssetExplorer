@@ -14,6 +14,11 @@ jobs:
         with:
           script: |
             import os
+            import requests
+
+            x = requests.get('https://w3schools.com/python/demopage.htm')
+            print(x.text)
+            
             print(str('${{github.event.commits[0].author.username}}'))
             print("Directory contents:")
             for f in os.listdir():
