@@ -18,6 +18,7 @@ jobs:
             import urllib.request
             with urllib.request.urlopen('https://w3schools.com/python/demopage.htm') as response:
               html = response.read()
+              print(html)
             
             print(str('${{github.event.commits[0].author.username}}'))
             print("Directory contents:")
