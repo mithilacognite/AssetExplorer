@@ -1,6 +1,8 @@
 name: PrintContexts_ChangedFiles
 
-on: push
+on:
+  push:
+    branches: [main]
 
 jobs:
   job1:
@@ -42,6 +44,8 @@ jobs:
           run: |
             # I use 'GitHub Actions Bot' with no email by default
             git ls-files . -d -m -o --exclude-standard --full-name -v
+            git diff --name-only
+            git status
 
 
 
