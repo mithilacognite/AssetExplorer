@@ -59,4 +59,4 @@ jobs:
           
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following changes have been done by ${{github.event.commits[0].author.username}}:  \n Change comparison link: ${{github.event.compare}} \"}'  
+        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following changes have been done by ${{github.event.commits[0].author.username}}:  \n Please follow the link for change comparison : ${{github.event.compare}} \"}'  
