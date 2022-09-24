@@ -45,7 +45,7 @@ jobs:
             # I use 'GitHub Actions Bot' with no email by default
             #git ls-files 
             git show --name-only
-            git diff --name-only dbac656d13892d643069ec54946c51f91188d263 73b6a2da4d69a3911223e879f31f56ecacb1ba6d
+            #git diff --name-only dbac656d13892d643069ec54946c51f91188d263 73b6a2da4d69a3911223e879f31f56ecacb1ba6d
 
 
 
