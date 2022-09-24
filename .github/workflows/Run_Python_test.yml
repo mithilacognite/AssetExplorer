@@ -15,7 +15,14 @@ jobs:
           run: |
             # I use 'GitHub Actions Bot' with no email by default
             firstString=$(git diff --name-only HEAD HEAD~1)
-            echo "MOD_FILES=$firstString" >> $GITHUB_ENV
+            firstString="src/docs/bestday/guides/detectdeviations.md"
+            search="src/docs"
+            replace="https://docs.cognite.com"
+            secondString="${firstString/"$search"/"$replace"}" 
+            search2=".md"
+            replace2=""
+            finalString="${secondString/"$search2"/"$replace2"}"
+            echo "MOD_FILES=$finalString" >> $GITHUB_ENV
         - name: pushslack
           uses: pullreminders/slack-action@master
           if: contains(github.event.head_commit.message, 'kp')
