@@ -15,13 +15,15 @@ jobs:
           run: |
             # I use 'GitHub Actions Bot' with no email by default
             firstString=$(git diff --name-only HEAD HEAD~1)
-            firstString="https://docs.cognite.com/bestday/guides/detectdeviations.md https://docs.cognite.com/bestday/guides/knowcapacity.md"
+            echo $firstString
             search="src/docs"
             replace="https://docs.cognite.com"
             secondString="${firstString//"$search"/"$replace"}" 
             search2=".md\n"
             replace2=" "
             finalString="${secondString//"$search2"/"$replace2"}"
+            echo $finalString
+            finalString="https://docs.cognite.com/bestday/guides/detectdeviations.md https://docs.cognite.com/bestday/guides/knowcapacity.md"
             echo $finalString
             echo "MOD_FILES=$finalString" >> $GITHUB_ENV
         - name: pushslack
