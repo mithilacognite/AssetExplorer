@@ -3,7 +3,7 @@ name: PrintContexts_ChangedFiles
 on: push
 
 jobs:
-  one:
+  job1:
     runs-on: ubuntu-latest 
     steps:
       - name: Dump GitHub context
@@ -31,26 +31,11 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
         
-
-#   test:
-#     name: Test
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
-
-#       - id: files
-#         name: Run the action
-#         uses: ./
-
-#       - name: Print steps context output
-#         run: |
-#           echo 'steps.files.outputs.all=${{ steps.files.outputs.all }}'
-#           echo 'steps.files.outputs.added=${{ steps.files.outputs.added }}'
-#           echo 'steps.files.outputs.modified=${{ steps.files.outputs.modified }}'
-#           echo 'steps.files.outputs.removed=${{ steps.files.outputs.removed }}'
-#           echo 'steps.files.outputs.renamed=${{ steps.files.outputs.renamed }}'
-#           echo 'steps.files.outputs.added_modified=${{ steps.files.outputs.added_modified }}'
-
-
+  job2:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: get history
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: git log
 
