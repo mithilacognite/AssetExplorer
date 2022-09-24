@@ -3,7 +3,7 @@ pagination_next: null
 pagination_prev: null
 ---
 
-# BestDay views  
+# BestDay views     
 
 The BestDay application consists of three views where you can view and work with production performances indicators on different detail levels. When you open BestDay, you are directed to the **KPI dashboard**, where you'll find key performance indicators across system levels, as well as aggregated production, deferment, and deviation data. In the **Well summary** view, you can search, analyze, and prioritize between wells to further explore through the **Deep dive** view, where you will be able to analyze the individual systems or wells more in-depth, and resolve identified production deviations.
 

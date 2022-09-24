@@ -5,7 +5,7 @@ title: Sign in
 ---
 
 # Sign in to Cognite BestDay
-#####
+#####  
 To access BestDay, navigate to [https://bestday.cogniteapp.com](https://bestday.cogniteapp.com/), type in your company name and sign in with your company ID and credentials.
 #########
 
