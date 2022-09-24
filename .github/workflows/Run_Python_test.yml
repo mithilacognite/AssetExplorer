@@ -15,7 +15,7 @@ jobs:
           run: |
             # I use 'GitHub Actions Bot' with no email by default
             firstString=$(git diff --name-only HEAD HEAD~1)
-            
+            firstString="https://docs.cognite.com/bestday/guides/detectdeviations.md https://docs.cognite.com/bestday/guides/knowcapacity.md"
             search="src/docs"
             replace="https://docs.cognite.com"
             secondString="${firstString//"$search"/"$replace"}" 
