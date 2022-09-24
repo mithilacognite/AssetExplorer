@@ -22,6 +22,7 @@ jobs:
             search2=".md\n"
             replace2=" "
             finalString="${secondString/"$search2"/"$replace2"}"
+            echo $finalString
             echo "MOD_FILES=$finalString" >> $GITHUB_ENV
         - name: pushslack
           uses: pullreminders/slack-action@master
