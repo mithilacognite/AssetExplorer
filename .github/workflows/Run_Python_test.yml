@@ -18,10 +18,10 @@ jobs:
             
             search="src/docs"
             replace="https://docs.cognite.com"
-            secondString="${firstString/"$search"/"$replace"}" 
+            secondString="${firstString//"$search"/"$replace"}" 
             search2=".md\n"
             replace2=" "
-            finalString="${secondString/"$search2"/"$replace2"}"
+            finalString="${secondString//"$search2"/"$replace2"}"
             echo $finalString
             echo "MOD_FILES=$finalString" >> $GITHUB_ENV
         - name: pushslack
