@@ -15,6 +15,7 @@ jobs:
           script: |
 
             path = 'https://docs.cognite.com'
+            path1 = ''
             import re
             message = str("""${{github.event.head_commit.message}}""").replace("\n\n", "##").replace("\n", "@")
             reg_result = re.search('##(.*)', message)
@@ -30,8 +31,9 @@ jobs:
               
               if reg_match != "": 
                 generated_path = path+reg_match
+                path1 = path1+'\n'+generated_path
                 print("generated_path:"+generated_path)
-                set_env("path1", generated_path)
+                set_env("path1", path1)
 
       - uses: pullreminders/slack-action@master
         if: contains(github.event.head_commit.message, 'kp')
