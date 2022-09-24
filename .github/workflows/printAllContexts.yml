@@ -45,10 +45,9 @@ jobs:
             # I use 'GitHub Actions Bot' with no email by default
             git ls-files . -d -m -o --exclude-standard --full-name -v
             git diff --name-only
-            git status
-            git diff --name-only --stage
+            git status            
             git ls-files --other --exclude-standard
-            git ls-files --other --modified --exclude-standard --stage
+            git ls-files --other --modified --exclude-standard 
 
 
 
