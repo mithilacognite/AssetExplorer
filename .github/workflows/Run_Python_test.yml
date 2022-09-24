@@ -14,9 +14,20 @@ jobs:
         - name: git
           run: |
             # I use 'GitHub Actions Bot' with no email by default
-            git diff --name-only HEAD HEAD~1        
+            git diff --name-only HEAD HEAD~1
+            echo "MOD_FILES=$(git diff --name-only HEAD HEAD~1)" >> $GITHUB_ENV
+
+          uses: pullreminders/slack-action@master
+          if: contains(github.event.head_commit.message, 'kp')
+      
           env:
-              MOD_FILES: test
+            SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+                
+          with:
+            args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.MOD_FILES}}  \"}' 
+
+                    
+
  
   job2:
     needs: job1
