@@ -14,8 +14,7 @@ jobs:
         - name: git
           run: |
             # I use 'GitHub Actions Bot' with no email by default
-            git diff --name-only HEAD HEAD~1
-        - name: Dump to env
+            git diff --name-only HEAD HEAD~1        
           env:
           MOD_FILES: ${{git diff --name-only HEAD HEAD~1}}
  
