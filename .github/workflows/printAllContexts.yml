@@ -37,5 +37,11 @@ jobs:
       - name: get history
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: git log
+        run: 
+          ls
+          git init
+          git log
+
+
+
 
