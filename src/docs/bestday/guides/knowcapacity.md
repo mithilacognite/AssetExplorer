@@ -3,7 +3,7 @@ pagination_next: null
 pagination_prev: null
 ---
 
-# Know your capacity     
+# Know your capacity      
 
 **BestDay's data-driven capacity estimation** gives you an accurate understanding of the current maximum achievable production. Use this as a capacity baseline to **compare actual production** and **identify optimization potentials**. BestDay evaluates current constraints to ensure a valid capacity baseline.
 
