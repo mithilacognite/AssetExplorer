@@ -10,8 +10,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: jannekem/run-python-script-action@v1
-      - uses: pullreminders/slack-action@master
-        if: contains(github.event.head_commit.message, 'kp')
       
         with:
           script: |
@@ -35,13 +33,14 @@ jobs:
                 print("generated_path:"+generated_path)
                 set_env("path1", generated_path)
 
-
+      - uses: pullreminders/slack-action@master
+        if: contains(github.event.head_commit.message, 'kp')
+      
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
               
-                env:
-                  SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-                      
-                with:
-                  args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.path1}}  \"}'  
+        with:
+           args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.path1}}  \"}'  
    
  
   job2:
