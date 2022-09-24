@@ -2,7 +2,7 @@
 pagination_next: null
 pagination_prev: null
 ---
-
+ 
 # Detect deviations
 ######################  kp       
 
