@@ -6,34 +6,21 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: jannekem/run-python-script-action@v1
+        
       
         with:
-          script: |
+      
+          run: |
 
-            path = 'https://docs.cognite.com'
-            path1 = ''
-            import re
-            message = str("""${{github.event.head_commit.message}}""").replace("\n\n", "##").replace("\n", "@")
-            reg_result = re.search('##(.*)', message)
-            
-            commit_description = reg_result.group(1)
-            description_arr = commit_description.split("@")
-            print(description_arr)
+            git diff --name-only HEAD HEAD~1
+            env:
+              MOD_FILES: ${{ git diff --name-only HEAD HEAD~1 }}
 
-            for file_url in description_arr:
-              print("file_url"+file_url)
-              search_text  = ".md"      
-              reg_match = str(re.search('docs(.*).md', file_url).group(1))  
-              
-              if reg_match != "": 
-                generated_path = path+reg_match
-                path1 = path1+'   '+generated_path
-                print("generated_path:"+generated_path)
-                set_env("path1", path1)
 
       - uses: pullreminders/slack-action@master
         if: contains(github.event.head_commit.message, 'kp')
@@ -42,7 +29,7 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
               
         with:
-           args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.path1}}  \"}'  
+           args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.MOD_FILES}}  \"}'  
    
  
   job2:
