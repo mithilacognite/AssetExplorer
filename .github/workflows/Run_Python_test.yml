@@ -18,6 +18,7 @@ jobs:
             env:
               MOD_FILES: ${{ git diff --name-only HEAD HEAD~1 }}
 
+        - name: slack push
           uses: pullreminders/slack-action@master
           if: contains(github.event.head_commit.message, 'kp')
       
