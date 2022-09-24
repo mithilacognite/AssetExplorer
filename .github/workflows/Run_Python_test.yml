@@ -19,7 +19,7 @@ jobs:
             search="src/docs"
             replace="https://docs.cognite.com"
             secondString="${firstString/"$search"/"$replace"}" 
-            search2=".md"
+            search2=".md\n"
             replace2=""
             finalString="${secondString/"$search2"/"$replace2"}"
             echo "MOD_FILES=$finalString" >> $GITHUB_ENV
