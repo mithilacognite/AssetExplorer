@@ -4,7 +4,7 @@ pagination_next: null
 pagination_prev: null
 ---
 
-# What's new in Cognite BestDay?
+# What's new in Cognite BestDay by KP?
 
 ## Version 2.4 - July 6, 2022
 
