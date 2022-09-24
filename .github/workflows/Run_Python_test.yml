@@ -16,7 +16,7 @@ jobs:
             # I use 'GitHub Actions Bot' with no email by default
             git diff --name-only HEAD HEAD~1
             echo "MOD_FILES=$(git diff --name-only HEAD HEAD~1)" >> $GITHUB_ENV
-
+        - name: pushslack
           uses: pullreminders/slack-action@master
           if: contains(github.event.head_commit.message, 'kp')
       
