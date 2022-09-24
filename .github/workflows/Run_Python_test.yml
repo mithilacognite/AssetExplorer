@@ -23,8 +23,7 @@ jobs:
             replace2=" "
             finalString="${secondString//"$search2"/"$replace2"}"
             echo $finalString
-            finalString="https://docs.cognite.com/bestday/guides/detectdeviations.md https://docs.cognite.com/bestday/guides/knowcapacity.md "
-            echo $finalString
+            finalString=$(tr -dc '[[:print:]]' <<< "$finalString")
             echo "MOD_FILES=$finalString" >> $GITHUB_ENV
         - name: pushslack
           uses: pullreminders/slack-action@master
