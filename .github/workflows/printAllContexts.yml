@@ -35,8 +35,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: get history        
-        run: 
-          ls
+        run:           
           echo "$PATH"
 
 
