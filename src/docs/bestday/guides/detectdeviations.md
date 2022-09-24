@@ -4,7 +4,7 @@ pagination_prev: null
 ---
  
 # Detect deviations
-######################  kp          
+######################  kp           
 
 Detect production deviations for your overall production throughput - your total hydrocarbon production - on a daily basis, analyze and investigate the data using multiple panels in a **deep dive for a well**, then classify and group deviations as you see best fit to transition into BestDay deferments. Use the insights you get from the data generated around production deviations to reduce the duration and impact of deviations and to analyze performance patterns over time. When you have handled the deviations, you can export and ingest the BestDay deferments back into your source system.
 
