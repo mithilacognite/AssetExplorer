@@ -3,7 +3,7 @@ pagination_next: null
 pagination_prev: null
 ---
 
-# Edit 3D models and revisions   
+# Edit 3D models and revisions   #change 2
 
 From the CDF user interface, you can rename or delete 3D **models** and you can publish, unpublish and delete **revisions**.
 
