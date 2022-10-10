@@ -2,7 +2,7 @@
 pagination_next: null
 pagination_prev: null
 ---
-
+   
 
 
 Scopes are a part of the **[OAuth 2 framework](https://oauth.net/2/)** and allow you to expand or restrict the access granted by the CDF groups a user or app is a member of.
