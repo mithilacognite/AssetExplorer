@@ -3,11 +3,11 @@ pagination_next: null
 pagination_prev: null
 ---
 
-# Upload 3D models and revisions   
+# Upload 3D models and revisions      
 
 From **Upload 3D models** in Cognite Data Fusion (CDF), you can upload 3D models and revisions to CDF without writing any code. We currently support CAD files from common systems and in standard formats such as RVM, OBJ, and FBX. More formats will be supported in the future.
 
-## Upload a 3D model
+## Upload a 3D model   
 
 **To upload a 3D model:**
 
