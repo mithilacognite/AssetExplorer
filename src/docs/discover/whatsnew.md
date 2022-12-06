@@ -31,7 +31,7 @@ features.
 - In **Document** filter:
   - Introduction of a new author filter for document search. Capability to filter on unknown authors.
 - Manage **document feedback** from the Admin Panel:
-  - Approve/reject document type feedback document classification. Note that only one change of document type label is allowed per day.
+  - Approve/reject document type feedback document classification.Note that only one change of document type label is allowed per day.
 - **Project Config Layer**:
   - Support to create, search and delete more than 1000 features.
   - Option to remove old layers from the admin settings dropdown.
