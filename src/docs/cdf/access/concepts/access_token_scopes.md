@@ -2,10 +2,11 @@
 pagination_next: null
 pagination_prev: null
 ---
+#test4
+   
 
-# Access token scopes   
 
-Scopes are a part of the **[OAuth 2 framework](https://oauth.net/2/)** and allow you to expand or restrict the access granted by the CDF groups a user or app is a member of.
+Scopes are a part of the **[OAuth 2 framework](https://oauth.net/2/)** and allow you to expand or restrict the access granted by the CDF groups a user or app is a member of. 
 
 Except for the `IDENTITY` scope, scopes don't grant access beyond the access granted by the group memberships. Instead, scopes act as filters to the capabilities in the groups. The access granted by scopes is additive, and if there are multiple scopes in an access token, the access granted is the union of the access granted by each scope.
 
