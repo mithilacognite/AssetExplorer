@@ -20,7 +20,7 @@ jobs:
             replace="https://docs.cognite.com"
             secondString="${firstString//"$search"/"$replace"}" 
             search2=".md"
-            replace2=" \n"
+            replace2=" "
             thirdString="${secondString//"$search2"/"$replace2"}"
             echo $thirdString
             search3="index"
