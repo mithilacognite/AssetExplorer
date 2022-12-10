@@ -24,7 +24,7 @@ jobs:
             thirdString="${secondString//"$search2"/"$replace2"}"
             echo $thirdString
             search3="index"
-            replace3=""
+            replace3=" "
             finalString="${thirdString//"$search3"/"$replace3"}"
             
             
