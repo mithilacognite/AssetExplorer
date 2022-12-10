@@ -3,7 +3,7 @@ pagination_next: null
 pagination_prev: null
 ---
 
-# About 3D models  .......           
+# About 3D models  .......            
 
 You can upload large **3D models** to Cognite Data Fusion (CDF) to better visualize and contextualize data. CDF automatically analyzes and optimizes the 3D models to enable devices with different form factors to render the models at high frame rates and with great detail.
 
