@@ -21,8 +21,13 @@ jobs:
             secondString="${firstString//"$search"/"$replace"}" 
             search2=".md"
             replace2=" "
-            finalString="${secondString//"$search2"/"$replace2"}"
-            echo $finalString
+            thirdString="${secondString//"$search2"/"$replace2"}"
+            echo $thirdString
+            search3="index"
+            replace3=""
+            finalString="${thirdString//"$search3"/"$replace3"}"
+            
+            
             finalString=$(tr -dc '[[:print:]]' <<< "$finalString")
             echo "MOD_FILES=$finalString" >> $GITHUB_ENV
         - name: pushslack
