@@ -20,7 +20,7 @@ jobs:
             replace="https://docs.cognite.com"
             secondString="${firstString//"$search"/"$replace"}" 
             search2=".md"
-            replace2=" "
+            replace2=" \n"
             thirdString="${secondString//"$search2"/"$replace2"}"
             echo $thirdString
             search3="index"
@@ -38,25 +38,5 @@ jobs:
             SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
                 
           with:
-            args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following files have been changed by ${{github.event.commits[0].author.username}}: \n ${{env.MOD_FILES}}  \"}' 
-
+            args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following documents have been changed: \n ${{env.MOD_FILES}}  \"}' 
                     
-
- 
-  job2:
-    needs: job1
-  # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-  # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    - name: Notify slack changeCompare
-      if: contains(github.event.head_commit.message, 'kp')
-      
-      env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          
-          
-      uses: pullreminders/slack-action@master
-      with:
-        args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" See the documentation changes done by ${{github.event.commits[0].author.username}} by following the link below:\n ${{github.event.compare}} \"}'  
