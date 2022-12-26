@@ -38,5 +38,5 @@ jobs:
             SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
                 
           with:
-            args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" Following documents have been changed: \n ${{env.MOD_FILES}}  \"}' 
+            args: '{\"channel\":\"C03LV8M6P25\",\"text\":\" We have recently released or updated these articles: \n ${{env.MOD_FILES}}  \"}' 
                     
