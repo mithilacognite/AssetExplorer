@@ -5,6 +5,7 @@ pagination_prev: null
 test edit
 # About Discover
 
+
 Cognite **Discover** runs on top of **Cognite Data Fusion** (CDF) which collects and contextualizes data from a wide range of sources.
 
 Discover **integrates with existing subsurface tools and systems**, which means you can access all available resources through a single, secure login. **Find and explore** structured data, such as seismic data, well data, and geospatial data or unstructured data from documents, images, reports, and spreadsheets using keywords or geographical references. Discover uses advanced machine learning algorithms to search and classify vast amounts of data, giving you quick and precise results.
