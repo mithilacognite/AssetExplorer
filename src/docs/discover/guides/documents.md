@@ -5,6 +5,7 @@ pagination_prev: null
 
 # Documents
 
+
 With Discover, you can browse and analyze all types of documents, such as PDF files, spreadsheets, emails, and images. Use the **Search** field, the **Polygon** tool, or select a **filter** in the **Documents** list in the left pane to find what you're looking for. You can filter according to file type, document type, date range, and source. You can then save your [search or add documents to a list of favorites](./favorites.md).
 
 <!-- ![Document Page](/images/discover/documents.png) -->
