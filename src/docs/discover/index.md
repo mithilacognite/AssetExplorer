@@ -2,7 +2,7 @@
 pagination_next: null
 pagination_prev: null
 ---
-
+test edit
 # About Discover
 
 Cognite **Discover** runs on top of **Cognite Data Fusion** (CDF) which collects and contextualizes data from a wide range of sources.
