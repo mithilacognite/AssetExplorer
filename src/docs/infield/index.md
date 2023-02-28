@@ -5,6 +5,7 @@ pagination_prev: null
 
 # About Cognite InField
 
+
 Cognite **InField** runs on top of [Cognite Data Fusion (CDF)](../dev/index.md), which collects, cleans and contextualizes all kinds of industrial data to make it accessible and meaningful for humans and machines.
 
 InField is available on **any mobile device** and via a **desktop** application. It anticipates the user´s needs and instantly supplies the right data in the right format for the task at hand.
