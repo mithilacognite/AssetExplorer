@@ -13,4 +13,5 @@ jobs:
     - name: Creating PR
       uses: peter-evans/create-pull-request@v3
       with:
-        commit-message: trigger
+        commit-message: "trigger"
+        branch: "auto-pr-branch"
