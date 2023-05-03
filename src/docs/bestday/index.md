@@ -5,6 +5,8 @@ pagination_prev: null
 
 # About Cognite BestDay 
 
+
+
 Cognite **BestDay** runs on top of Cognite Data Fusion (CDF) and is a **central hub** for decision support, providing a more **continuous, data-driven approach** to production optimization in your day-to-day operations. **Detect and assess deviations and underperformance** and act to **boost production and reduce production losses** by knowing your maximum achievable production and use it as a baseline for **visualizing inefficiencies**.
 
 Cognite BestDay gives access to real-time and historical data, where different disciplines and shifts can have **one common collaboration platform** for decision making, knowing and understanding the production targets, be notified on abnormalities, log actions, as well as adding comments to the data and time ranges discussed.
