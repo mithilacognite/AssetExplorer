@@ -4,8 +4,7 @@ pagination_prev: null
 ---
 
 # About data integration
-
-To analyze and contextualize your data in Cognite Data Fusion (CDF), you need to establish efficient **data integration pipelines** between your existing data infrastructure and CDF.
+ to establish efficient **data integration pipelines** between your existing data infrastructure and CDF.
 
 A data integration pipeline is typically composed of an **extract** component, a **transform** component, and a **contextualization** component.
 
